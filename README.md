@@ -1,4 +1,4 @@
-## Android Studio을 통한 이용한 게임(장애물 피하기 게임)
+## Android Studio을 통한 이용한 장애물 피하기 게임
 ![title](https://user-images.githubusercontent.com/60215726/75008874-8e86b880-54bc-11ea-86e2-c39a727ce509.PNG)
 
 * 자유로운 앱 제작의 과제 프로젝트로 통해서 처음으로 도전하며 3주의 시간정도 들어간 Android Studio 기반으로 제작한 게임 앱 입니다. 처음으로 게임 앱 제작에 도전하다보니 게임 코드 면에서 부족한 부분도 많고 디자인 또한 부족한 점이 많이 있습니다.   
