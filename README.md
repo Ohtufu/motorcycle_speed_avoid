@@ -6,8 +6,8 @@
 * 이 프로젝트를 진행하면서 참고한 책으로는 만들면서 배우는 안드로이드 게임 프로그래밍(개정판)입니다.
    
 ### 1. M.S.A 플로우 차트
-![플로우차트](https://user-images.githubusercontent.com/60215726/75009070-0c4ac400-54bd-11ea-9721-e3e0589340f4.PNG)
-   
+![image](https://user-images.githubusercontent.com/55979143/76143276-7f595a80-60b9-11ea-93d0-ecc03d8bad44.png)
+
 ### 2. 코드
 #### 1)GameView.java
 GameView는 프레임워크로서  게임 배경에 대한 그림을 비트맵으로 그리는 부분과 게임 플레이어의 조작, gameview의 surface에 대한 스레드를 관리해주는 역할을 합니다.
