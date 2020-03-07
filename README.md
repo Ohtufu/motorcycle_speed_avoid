@@ -1,4 +1,4 @@
-## Android Studio을 이용한 장애물 피하기 게임 - #####자유 주제 선정 과제 프로젝트
+## Android Studio을 이용한 장애물 피하기 게임 - 자유 주제 선정 과제 프로젝트
 ![title](https://user-images.githubusercontent.com/60215726/75008874-8e86b880-54bc-11ea-86e2-c39a727ce509.PNG)
 
 * **M.S.A**(**M**otorcycle **S**peed **A**void)
