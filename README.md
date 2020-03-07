@@ -7,8 +7,8 @@
 * Player 캐릭터의 움직임, 장애물들의 패턴, 회복 아이템, 맵, 모든 것들을 XML을 이용하지 않고 **자바 코드로 구현**  (Main 화면 제외)
 
 ### 1. M.S.A 플로우 차트  
+---  
 ![image](https://user-images.githubusercontent.com/55979143/76143330-f0990d80-60b9-11ea-81f2-383d8f9fad66.png)  
----
 
 ### 2. 코드
 #### 1) GameView.java
