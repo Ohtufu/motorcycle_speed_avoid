@@ -6,7 +6,7 @@
 * 이 프로젝트를 진행하면서 참고한 책으로는 만들면서 배우는 안드로이드 게임 프로그래밍(개정판)입니다.
    
 ### 1. M.S.A 플로우 차트
-![image](https://user-images.githubusercontent.com/55979143/76143276-7f595a80-60b9-11ea-93d0-ecc03d8bad44.png)
+![image](https://user-images.githubusercontent.com/55979143/76143330-f0990d80-60b9-11ea-81f2-383d8f9fad66.png)
 
 ### 2. 코드
 #### 1)GameView.java
