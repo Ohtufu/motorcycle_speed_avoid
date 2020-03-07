@@ -1,4 +1,4 @@
-## Android Studio을 통한 이용한 장애물 피하기 게임
+## Android Studio을 이용한 장애물 피하기 게임
 ![title](https://user-images.githubusercontent.com/60215726/75008874-8e86b880-54bc-11ea-86e2-c39a727ce509.PNG)
 
 * Android Studio 기반 제작, 자유 주제 선정 과제 프로젝트
