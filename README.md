@@ -1,11 +1,11 @@
-## Android Studio을 이용한 장애물 피하기 게임 (자유 주제 선정 과제 프로젝트)
+## Android Studio을 이용한 장애물 피하기 게임
 ![title](https://user-images.githubusercontent.com/60215726/75008874-8e86b880-54bc-11ea-86e2-c39a727ce509.PNG)
 
 * **M.S.A**(**M**otorcycle **S**peed **A**void)
 * Android Studio 기반으로 제작한 **장애물 피하기 게임** 앱 입니다.
 * 약 3-4주의 소요시간, 처음으로 도전한 앱 제작이다 보니 전체적인 코드와 디자인 부분에 아쉬운 점이 많이 있습니다.
    
-* 특징  
+#####특징  
 Main 화면을 제외한 Player 캐릭터의 움직임, 장애물들의 패턴, 회복 아이템, 맵, 모든 것들을 XML을 이용하지 않고 **자바 코드로 구현**을 했습니다.  
 
 ### 1. M.S.A 플로우 차트  
