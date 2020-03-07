@@ -1,4 +1,4 @@
-## Android Studio을 이용한 장애물 피하기 게임
+# Android Studio을 이용한 장애물 피하기 게임
 ![title](https://user-images.githubusercontent.com/60215726/75008874-8e86b880-54bc-11ea-86e2-c39a727ce509.PNG)
 
 * **M.S.A**(**M**otorcycle **S**peed **A**void)  
@@ -6,11 +6,11 @@
 * 약 3-4주의 소요시간, 처음으로 도전한 앱 제작이다 보니 전체적인 코드와 디자인 부분에 아쉬운 점이 많이 있습니다.  
 * Player 캐릭터의 움직임, 장애물들의 패턴, 회복 아이템, 맵, 모든 것들을 XML을 이용하지 않고 **자바 코드로 구현**  (Main 화면 제외)
 
-### M.S.A 플로우 차트  
+## M.S.A 플로우 차트  
 ---  
 ![image](https://user-images.githubusercontent.com/55979143/76143330-f0990d80-60b9-11ea-81f2-383d8f9fad66.png)  
 
-### 코드  
+## 코드  
 ---
 #### 1) GameView.java
 GameView는 프레임워크로서  게임 배경에 대한 그림을 비트맵으로 그리는 부분과 게임 플레이어의 조작, gameview의 surface에 대한 스레드를 관리해주는 역할을 합니다.
@@ -600,7 +600,7 @@ Enermy.java, Item.java, Player.java 각각에 추가하여 충돌 처리를 할 
 ```
 for문을 이용해서 각각의 충돌을 하였을 때 사라지도록 구현하였습니다.   
    
-### 3. 메인 및 게임 실행 화면
+## 3. 메인 및 게임 실행 화면
 ![ima](https://user-images.githubusercontent.com/60215726/75088558-581b6d00-5592-11ea-9433-52934e59f59e.PNG)
 
 * 참고 서적 - 만들면서 배우는 안드로이드 게임 프로그래밍(개정판) 한빛미디어  
