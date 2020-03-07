@@ -1,6 +1,7 @@
 ## Android Studio을 이용한 장애물 피하기 게임
 ![title](https://user-images.githubusercontent.com/60215726/75008874-8e86b880-54bc-11ea-86e2-c39a727ce509.PNG)
 
+* **M.S.A**(**M**otorcycle **S**peed **A**void)
 * 자유 주제 선정 과제 프로젝트, Android Studio 기반으로 제작한 **장애물 피하기 게임** 앱 입니다.
 * 소요시간은 약 3-4주이며 처음으로 도전한 게임 앱 제작이다 보니 전체적인 코드와 디자인 부분에 아쉬운 점이 많이 있습니다.
    
