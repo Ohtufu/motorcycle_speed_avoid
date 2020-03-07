@@ -10,8 +10,6 @@
 ## M.S.A 플로우 차트  
 ![image](https://user-images.githubusercontent.com/55979143/76143330-f0990d80-60b9-11ea-81f2-383d8f9fad66.png)  
 
-
-
 ## 코드  
 #### 1) GameView.java
 GameView는 프레임워크로서  게임 배경에 대한 그림을 비트맵으로 그리는 부분과 게임 플레이어의 조작, gameview의 surface에 대한 스레드를 관리해주는 역할을 합니다.
