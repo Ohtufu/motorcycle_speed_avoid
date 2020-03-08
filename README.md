@@ -89,7 +89,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
         }
     }
     public void ChangeGameState(IState _state){
-    //게임뷰에서 상태를 변경하기위한 메소드
+        //게임뷰에서 상태를 변경하기위한 메소드
         if (m_state!=null) m_state.Destroy();
         _state.Init();
         m_state=_state;
@@ -98,7 +98,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
 ```
    
 #### 2) IState(인터페이스)
-인터페이스로서 여러 클래스에서 공통적인 부분을 추상화한 것입니다. 
+클래스들의 공통적인 부분을 추상화한 것입니다. 
 ```java
 public interface IState {
     public void Init();
