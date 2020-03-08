@@ -288,7 +288,7 @@ public class AppManager {
  사용된 클래스로는 GameState, CollsionManager, Enemy, Item, Player 입니다.
 #####  (1) 장애물의 패턴과 난이도 조절   
 * 장애물의 패턴   
-패턴을 나타내는 Enemy와 세 가지의 장애물 그림을 나타내는 Enemy_1,Enemy_2,Enemy_3으로 구성되어있습니다. 
+패턴을 나타내는 Enemy와 세 가지의 장애물 그림을 나타내는 Enemy_1,Enemy_2,Enemy_3으로 구성되어있습니다.   
 패턴에서는 등장하는 3가지 경로 중에 어느 곳으로 나오는 지 정해주는 m_x과 내려오는 속도를 정해주는 m_y로 존재하며 패턴은 이 두 가지로 섞어 완성해주었습니다.
 ```java
 //Enemy.java
