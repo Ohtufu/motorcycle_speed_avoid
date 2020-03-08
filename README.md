@@ -152,7 +152,7 @@ public class GraphicObject {
 ```
    
 #### 4) GameViewThread.java
-Thread 클래스를 상속받는 클래스로써 GameView와 SurfaceHolder를 생성자 매개변수로 가지며, 스레드 실행을 위해 run 메소드를 재정의 합니다.
+Thread 클래스를 상속받는 클래스로서 GameView와 SurfaceHolder를 생성자 매개변수로 가지며, 스레드 실행을 위해 run 메소드를 재정의 합니다.
 ```java
 /그림을 관리하는 클래스를 생성, 그림처리는 스레드로 이용
 public class GameViewThread extends Thread {
@@ -203,7 +203,7 @@ public class SpriteAnimation extends GraphicObject{
     private int m_iFrames;// 프레임 개수
 
     //애니매이션의 진행 정도를 알려주는 용도(현재 프레임을 담는 멤버 변수)
-    //이변수는 시간이 지남에 따라 값이 증가하고, 그에 따라 그려지는 이미지도 바뀌도록 구현
+    //이 변수는 시간이 지남에 따라 값이 증가하고, 그에 따라 그려지는 이미지도 바뀌도록 구현
     //나머지는 개별 프레임의 높이와 넓이를 담아줄 멤버 변수.  
     
     private  int m_CurrentFrame;//최근 프레임
