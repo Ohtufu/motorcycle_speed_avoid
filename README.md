@@ -530,10 +530,10 @@ public class BackGround extends  GraphicObject{
    
 
 ##### (4) player   
-플레이어는 좌,우로 만 움직일 수 있도록 설정하고 게임을 진행하는 방식으로 제작하였습니다.
-플레이어가 장애물이나 아이템과의 코드가 다른점은 움직임에 따른 코드와 충돌시에 라이프 변화에 따른 코드가 있습니다.   
+플레이어는 좌, 우로 만 움직일 수 있도록 설정
+플레이어가 장애물이나 아이템과의 코드가 다른 점은 움직임과 충돌 시 라이프 변화에 따른 코드가 있습니다.   
 * Player.java   
-여기서는 플레이어 캐릭터에 대한 그림과, 초기 위치값, 라이프등에 대한 것이 설정 되어있습니다.
+캐릭터에 대한 이미지, 초기 위치 값, 라이프 등이 설정되어 있습니다.
 라이프 회복을 해주는 AddLife()와 데미지를 받는 destroyPlayer() 메소드가 있습니다.
 ```java
 Public class Player extends SpriteAnimation{
@@ -567,9 +567,9 @@ Public class Player extends SpriteAnimation{
    
 
 ##### (5) 충돌   
-충돌이라는 것은 장애물과 플레이어, 라이프회복아이템과 플레이어 간에 발생하도록 해주는 것으로 캐릭터와 장애물, 아이템에 사각형이라는 안 보이는 틀을 그려 효과를 일으키도록 구현하였습니다.
+장애물-플레이어, 라이프 회복 아이템-플레이어 관계에 사각형의 보이지 않는 틀(박스)을 그려 효과를 일으키도록 구현하였습니다.
 *  CollisionManager.java   
-이 클래스에서는 충돌 처리에 관한 로직을 담당하는 곳입니다.
+충돌의 처리를 담당하는 곳입니다.
 ```java
 public class CollisionManager {
     public static  boolean CheckBoxToBox(Rect _rt1, Rect _rt2) {
@@ -583,7 +583,7 @@ public class CollisionManager {
 ```java
 Rect m_BoundBox = new Rect(); 
 ```
-Enermy.java, Item.java, Player.java 각각에 추가하여 충돌 처리를 할 수 있도록 해줍니다.
+Enermy.java, Item.java, Player.java 각각에 추가하여 충돌 처리를 할 수 있도록 합니다.
 ```java
  @Override
     public void Update(long GameTime) {
@@ -597,7 +597,7 @@ Enermy.java, Item.java, Player.java 각각에 추가하여 충돌 처리를 할 
 
 ```java
     public void Update() {
-     // GameState.java에서 충돌 관련성 있는 명령어입니다.
+        //GameState.java에서 충돌 관련성 있는 명령어입니다.
         for(Enemy enem : m_enemlist) {
             enem.Update(GameTime);
         }
@@ -607,7 +607,7 @@ Enermy.java, Item.java, Player.java 각각에 추가하여 충돌 처리를 할 
         CheckCollision();
     }
 ```
-for문을 이용해서 각각의 충돌을 하였을 때 사라지도록 구현하였습니다.   
+for문을 이용해서 각 충돌 시, 사라지도록 구현하였습니다.   
    
 ## 3. 메인 및 게임 실행 화면  
 ![ima](https://user-images.githubusercontent.com/60215726/75088558-581b6d00-5592-11ea-9433-52934e59f59e.PNG)
