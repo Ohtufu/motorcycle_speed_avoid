@@ -15,7 +15,7 @@
 프레임워크로서 게임 배경에 대한 그림을 비트맵으로 그리며 게임 플레이어의 조작, gameview의 surface에 대한 스레드를 관리하는 역할을 합니다.
 ```java
 //View를 연결하기 위한 surface생성,변경, 종료 이벤트 알려주는 인터페이스 surfaceholder: 실제 surface에 대한 작업자
-//surface를 관리하는 surfaceHolder를 구현해야함-컨트롤하는 객체
+//surface를 관리하는 surfaceHolder를 구현해야함 - 컨트롤하는 객체
 public class GameView extends SurfaceView implements SurfaceHolder.Callback{  
 
     private GameViewThread m_thread;
@@ -37,7 +37,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
         setFocusable(true); 
 
         getHolder().addCallback(this);
-        //내가 만들 객체가 surfaceHolder롤백을 수신하고자 한다는것을 surfaceholder에게 알림.
+        //내가 만들 객체가 surfaceHolder 롤 백을 수신하고자 한다는것을 surfaceholder에게 알림.
         m_thread = new GameViewThread(getHolder(),this);
         AppManager.getInstance().setGameView(this);
         AppManager.getInstance().setResources(getResources());
@@ -62,17 +62,17 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
     }
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        //뷰크기
+    //뷰크기
     }
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-//뷰메모리내 만들다
+    //뷰메모리내 만들다
         //스레드를 실행 상태로 만듬
         m_thread.setRunning(true);
         //스레드 실행
         m_thread.start();
     }
-// gameview의 surface가 생성될 때 스레드를 실행하고, surface가 파괴될 때 스레드를 종료시키는 루틴을 구현
+    //gameview의 surface가 생성될 때 스레드를 실행하고, surface가 파괴될 때 스레드를 종료시키는 루틴을 구현
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
         //메모리에서 사라지면 호출
@@ -88,10 +88,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
             }
         }
     }
-  public void ChangeGameState(IState _state){//게임뷰에서 상태를 변경하기위한 메소드
-      if (m_state!=null) m_state.Destroy();
-      _state.Init();
-      m_state=_state;
+    public void ChangeGameState(IState _state){
+    //게임뷰에서 상태를 변경하기위한 메소드
+        if (m_state!=null) m_state.Destroy();
+        _state.Init();
+        m_state=_state;
     }
 }
 ```
