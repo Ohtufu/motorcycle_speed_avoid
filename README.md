@@ -525,7 +525,6 @@ public class BackGround extends  GraphicObject{
     public void Update() {
         m_backgroud.Update(GameTime);
         m_background2.Update(GameTime);
-//...
 }
 ```
    
