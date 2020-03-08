@@ -249,8 +249,8 @@ public class SpriteAnimation extends GraphicObject{
 }
 ```
 #### 6)AppManager.java
-프레임 워크를 관리하는 매니저 클래스로서 프레임워크를 사용하는 애플리케이션을 관리합니다.
-또한 게임 뷰와 리소스 접근을 위해서만 사용, 추후에 상용 수준의 게임을 만든다면 여기 클래스에 애플리케이션 실행 정보나 관리하는 기능을 추가할 수 있습니다.
+프레임워크를 사용하는 애플리케이션을 관리하며 게임 뷰와 리소스 접근을 위해서만 사용합니다.   
+추후에 상용 수준의 게임을 만든다면 애플리케이션 실행 정보나 관리하는 기능을 추가할 수 있습니다.
 ```java
 public class AppManager {
     private static AppManager s_instance;
