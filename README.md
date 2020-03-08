@@ -46,7 +46,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
     }
     public void Update(){
         //프레임 워크에서 사용자의 입력이나 안드로이드 내외부의 신호를 받지 않더라도 데이터를 자동으로 갱신
-        //updata 메소드를 스레드에서 지속적으로 실행해야만 갱신이 수행되므로 gameviewthread의 run메서드에서 update 메소드를 실행하도록
+        //updata 메소드를 스레드에서 지속적으로 실행해야만 갱신이 수행되므로  
+        //gameviewthread의 run메서드에서 update 메소드를 실행하도록
         m_state.Update();
     }
     @Override
