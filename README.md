@@ -117,7 +117,7 @@ public interface IState {
 }
 ```
 #### 3) GraphicObject.java
-게임 실행에서 여러 가지 종류의 그래픽 객체에 대한 일반적인 속성을 제공하는 기본 클래스입니다. 
+게임 실행에서 필요한 여러 그래픽 객체의 일반적인 속성을 제공하는 기본 클래스입니다. 
 ```java
 public class GraphicObject {
     protected Bitmap m_bitmap; //비트를 표현하기 위한
@@ -154,7 +154,7 @@ public class GraphicObject {
 #### 4) GameViewThread.java
 Thread 클래스를 상속받는 클래스로서 GameView와 SurfaceHolder를 생성자 매개변수로 가지며, 스레드 실행을 위해 run 메소드를 재정의 합니다.
 ```java
-/그림을 관리하는 클래스를 생성, 그림처리는 스레드로 이용
+//그림을 관리하는 클래스를 생성, 그림 처리는 스레드로 이용
 public class GameViewThread extends Thread {
     //접근을 위한 멤버 변수
     private SurfaceHolder m_surfaceHolder;
