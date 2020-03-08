@@ -128,7 +128,7 @@ public class GraphicObject {
         m_bitmap = bitmap;
         m_x=0;
         m_y=0;
-        //생성자에서 비트맵을 로드하고 좌표를 원점으로 초기화하는 부분
+    //생성자에서 비트맵을 로드하고 좌표를 원점으로 초기화
     }
     //좌표를 설정하는 메소드들 좌표 설정
     public  void SetPosition(int x, int y){
