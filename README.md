@@ -32,8 +32,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
     }
     public GameView(Context context){
         super(context);
-
-        setFocusable(true); // 키 입력을 지원하는 안드로이드 폰에서 주인공 캐릭터 이동 구현
+        
+        //키 입력을 지원하는 안드로이드 폰에서 주인공 캐릭터 이동 구현
+        setFocusable(true); 
 
         getHolder().addCallback(this);
         //내가 만들 객체가 surfaceHolder롤백을 수신하고자 한다는것을 surfaceholder에게 알림.
@@ -45,7 +46,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
     }
     public void Update(){
         //프레임 워크에서 사용자의 입력이나 안드로이드 내외부의 신호를 받지 않더라도 데이터를 자동으로 갱신
-        //updata메서드를 스레드에서 지속적으로 실행해야만 갱신이 수행되므로 gameviewthread의 run메서드에서 update메서드를 실행하도록
+        //updata 메소드를 스레드에서 지속적으로 실행해야만 갱신이 수행되므로 gameviewthread의 run메서드에서 update 메소드를 실행하도록
         m_state.Update();
     }
     @Override
