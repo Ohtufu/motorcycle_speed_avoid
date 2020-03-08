@@ -45,7 +45,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
 
     }
     public void Update(){
-        //프레임 워크에서 사용자의 입력이나 안드로이드 내외부의 신호를 받지 않더라도 데이터를 자동으로 갱신
+        //프레임 워크에서 사용자의 입력이나 안드로이드 내, 외부의 신호를 받지 않더라도 데이터를 자동으로 갱신
         //updata 메소드를 스레드에서 지속적으로 실행해야만 갱신이 수행되므로  
         //gameviewthread의 run 메소드에서 update 메소드를 실행하도록
         m_state.Update();
@@ -62,17 +62,17 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
     }
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        //뷰크기
+        //뷰 크기
     }
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        //뷰메모리내 만들다
+        //뷰 메모리내 만들다
         //스레드를 실행 상태로 만듬
         m_thread.setRunning(true);
         //스레드 실행
         m_thread.start();
     }
-    //gameview의 surface가 생성될 때 스레드를 실행하고, surface가 파괴될 때 스레드를 종료시키는 루틴을 구현
+    //gameview의 surface가 생성될 때 스레드를 실행하고, surface가 파괴될 때 스레드를 종료시키는 루틴
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
         //메모리에서 사라지면 호출
@@ -84,12 +84,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
                 m_thread.join();
                 retry = false;
             }catch(InterruptedException e){
-                //스레드가 종료되도록 계속 시도.
+                //스레드가 종료되도록 계속 시도
             }
         }
     }
     public void ChangeGameState(IState _state){
-        //게임뷰에서 상태를 변경하기위한 메소드
+        //게임 뷰에서 상태를 변경하기 위한 메소드
         if (m_state!=null) m_state.Destroy();
         _state.Init();
         m_state=_state;
@@ -120,30 +120,30 @@ public interface IState {
 게임 실행에서 여러 가지 종류의 그래픽 객체에 대한 일반적인 속성을 제공하는 기본 클래스입니다. 
 ```java
 public class GraphicObject {
-    protected Bitmap m_bitmap; //비트를 표현하기위한
-    protected  int m_x, m_y; //좌표값
+    protected Bitmap m_bitmap; //비트를 표현하기 위한
+    protected  int m_x, m_y; //좌표 값
 
     //생성자
     public GraphicObject(Bitmap bitmap){
         m_bitmap = bitmap;
         m_x=0;
         m_y=0;
-        //생성자에서 비트맵을 로드하고 좌표를 원점으로 초기화하는부분
+        //생성자에서 비트맵을 로드하고 좌표를 원점으로 초기화하는 부분
     }
-    //좌표를 설정하는 메소드들 좌표설정
+    //좌표를 설정하는 메소드들 좌표 설정
     public  void SetPosition(int x, int y){
         m_x = x;
         m_y = y;
     }
-    //이미지를 그림.
+    //이미지를 그림
     public void Draw(Canvas canvas){//그림을 그리게하는 코드 (메소드)
         canvas.drawBitmap(m_bitmap,m_x,m_y,null);
     }
-    //x좌표를 반환
+    //x좌표 반환
     public int GetX(){
         return m_x;
     }
-    //y좌표를 반환.
+    //y좌표 반환
     public int GetY(){
         return  m_y;
     }   
