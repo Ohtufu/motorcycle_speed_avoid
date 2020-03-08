@@ -290,7 +290,7 @@ public class AppManager {
 * 장애물의 패턴   
 패턴을 나타내는 Enemy와 세 가지의 장애물 그림을 나타내는 Enemy_1,Enemy_2,Enemy_3으로 구성되어있습니다.   
 등장하는 3가지 경로 중에 경로를 지정하는 m_x, 내려오는 속도를 지정하는 m_y로 존재합니다.  
-이 두 가지로 패턴을 구현했습니다.
+이 두 가지를 이용하여 패턴을 만들었습니다.
 ```java
 //Enemy.java
  void Move(){
