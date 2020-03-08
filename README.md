@@ -517,7 +517,7 @@ public class BackGround extends  GraphicObject{
         
         }
     }
-‘’‘
+``` 
 맵을 그려주고 효과를 주었으니 GameState.java에서 Update() 매소드를 이용하여 지속적으로 변화를 수행시켜줍니다.
 ```java
 //GameState.java
