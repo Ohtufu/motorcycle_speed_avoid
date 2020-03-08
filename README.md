@@ -285,8 +285,8 @@ public class AppManager {
 ```
    
 #### 7) 게임진행
- 만들어진 장애물, 아이템, 플레이어의 움직임, 점수에 따른 맵 배경 변경 및 난이도 상승등을 컨트롤 할 수 있습니다.   
- 사용된 클래스로는 GameState, CollsionManager, Enemy, Item, Player 입니다.
+ 플레이어 점수와 진행 시간에 따른 스테이지 배경 변경과 난이도 상승등을 컨트롤 할 수 있습니다.   
+ GameState, CollsionManager, Enemy, Item, Player 클래스가 사용되었습니다.
 #####  (1) 장애물의 패턴과 난이도 조절   
 * 장애물의 패턴   
 패턴을 나타내는 Enemy와 세 가지의 장애물 그림을 나타내는 Enemy_1,Enemy_2,Enemy_3으로 구성되어있습니다.   
