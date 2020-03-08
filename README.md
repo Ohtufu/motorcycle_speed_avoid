@@ -152,7 +152,8 @@ public class GraphicObject {
 ```
    
 #### 4) GameViewThread.java
-Thread 클래스를 상속받는 클래스로서 GameView와 SurfaceHolder를 생성자 매개변수로 가지며, 스레드 실행을 위해 run 메소드를 재정의 합니다.
+Thread 클래스를 상속, GameView와 SurfaceHolder를 생성자 매개변수 가집니다.  
+스레드 실행을 위해 run 메소드를 재정의 합니다.
 ```java
 //그림을 관리하는 클래스를 생성, 그림 처리는 스레드로 이용
 public class GameViewThread extends Thread {
