@@ -491,7 +491,7 @@ GameState.java에서 점수, 시간, 플레이어의 생명 점수에 따라 저
 ![map](https://user-images.githubusercontent.com/60215726/75035190-4a160f80-54f2-11ea-8451-c132204ec40a.PNG)  
 
  * BackGround.java   
-스크롤의 효과와 스피드를 지정
+스크롤 효과와 스피드를 지정
 ```java
 public class BackGround extends  GraphicObject{
     static final float SCROLL_SPEED = 30f;
