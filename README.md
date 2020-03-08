@@ -297,7 +297,7 @@ public class AppManager {
 
             if(m_y<=200){
                 m_x = 50;
-                m_y += speed; //중간지점까지 기본속도로
+                m_y += speed; //중간지점까지 기본 속도
             }
             else {
                 m_y += speed*2;
@@ -307,7 +307,7 @@ public class AppManager {
 
             if(m_y<=200){
                 m_x = 380;
-                m_y += speed; //중간지점까지 기본 속도로
+                m_y += speed; //중간지점까지 기본 속도
             }
             else {
                 m_y += speed*5;
@@ -317,7 +317,7 @@ public class AppManager {
            //세번째
             if(m_y<=200){
                 m_x = 700;
-                m_y += speed; //중간지점까지 기본 속도로
+                m_y += speed; //중간지점까지 기본 속도
             }
             else {
                 m_y += speed*5;
@@ -326,12 +326,12 @@ public class AppManager {
         else if(movetype == MOVE_PATTERN_4){
  
             m_x = 700;
-            m_y += speed*5 ; //중간지점까지 기본 속도로
+            m_y += speed*5 ; //중간지점까지 기본 속도
         }
         else if(movetype == MOVE_PATTERN_5){
   
             m_x = 50;
-            m_y += speed*2; //중간지점까지 기본 속도로
+            m_y += speed*2; //중간지점까지 기본 속도
         }
 }
 ```
