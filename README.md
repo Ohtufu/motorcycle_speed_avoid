@@ -62,11 +62,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
     }
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-    //뷰크기
+        //뷰크기
     }
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-    //뷰메모리내 만들다
+        //뷰메모리내 만들다
         //스레드를 실행 상태로 만듬
         m_thread.setRunning(true);
         //스레드 실행
