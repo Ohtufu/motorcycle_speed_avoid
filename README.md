@@ -16,9 +16,11 @@
 ```java
 //View를 연결하기 위한 surface생성,변경, 종료 이벤트 알려주는 인터페이스 surfaceholder: 실제 surface에 대한 작업자
 //surface를 관리하는 surfaceHolder를 구현해야함//컨트롤하는 객체
-public class GameView extends SurfaceView implements SurfaceHolder.Callback{
+public class GameView extends SurfaceView implements SurfaceHolder.Callback{  
+
     private GameViewThread m_thread;
-    private  IState m_state;
+    private  IState m_state;  
+    
     @Override
     protected void onDraw(Canvas canvas) {
 //        super.onDraw(canvas);
