@@ -37,7 +37,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
         setFocusable(true); 
 
         getHolder().addCallback(this);
-        //내가 만들 객체가 surfaceHolder 롤 백을 수신하고자 한다는것을 surfaceholder에게 알림.
+        //내가 만들 객체가 surfaceHolder 롤 백을 수신하고자 한다는것을 surfaceholder에게 알림
         m_thread = new GameViewThread(getHolder(),this);
         AppManager.getInstance().setGameView(this);
         AppManager.getInstance().setResources(getResources());
@@ -117,7 +117,7 @@ public interface IState {
 }
 ```
 #### 3) GraphicObject.java
-게임 실행에서 필요한 여러 그래픽 객체의 일반적인 속성을 제공하는 기본 클래스입니다. 
+게임 실행에서 필요한 여러 그래픽 객체의 일반적인 속성을 제공하는 기본 클래스 
 ```java
 public class GraphicObject {
     protected Bitmap m_bitmap; //비트를 표현하기 위한
@@ -285,13 +285,13 @@ public class AppManager {
 ```
    
 #### 7) 게임진행
- 플레이어 점수와 진행 시간에 따른 스테이지 배경 변경과 난이도 상승등을 컨트롤 할 수 있습니다.   
- GameState, CollsionManager, Enemy, Item, Player 클래스가 사용되었습니다.
+ 플레이어 점수와 진행 시간에 따른 스테이지 배경 변경과 난이도 상승등을 컨트롤 합니다.  
+ GameState, CollsionManager, Enemy, Item, Player 클래스를 사용합니다.
 #####  (1) 장애물의 패턴과 난이도 조절   
 * 장애물의 패턴   
 패턴을 나타내는 Enemy와 세 가지의 장애물 그림을 나타내는 Enemy_1,Enemy_2,Enemy_3으로 구성되어있습니다.   
 등장하는 3가지 경로 중에 경로를 지정하는 m_x, 내려오는 속도를 지정하는 m_y로 존재합니다.  
-이 두 가지를 이용하여 패턴을 만들었습니다.
+이 두 가지를 이용(합)하여 패턴을 만들었습니다.
 ```java
 //Enemy.java
  void Move(){
@@ -472,10 +472,10 @@ GameState.java에서 점수, 시간, 플레이어의 생명 점수에 따라 저
                 enem.SetPosition(0, -60);
                 if (m_player.getLife() > 5) {
                     enem.movetype = ranEnem.nextInt(3);
-                    //장애물 종류는 3개, 랜덤으로 나오도록 설정하는 곳입니다.
+                    //장애물 종류는 3개, 랜덤으로 나오도록 설정
                 } else {
                     enem.movetype = ranEnem.nextInt(13);
-                    //장애물 패턴의 종류 13개, 랜덤으로 정하는 곳입니다.
+                    //장애물 패턴의 종류 13개, 랜덤 나오도록 설정
                 }
                 m_enemlist.add(enem);
             }
@@ -520,7 +520,7 @@ public class BackGround extends  GraphicObject{
         }
     }
 ``` 
-맵을 그려주고 효과를 주었으니 GameState.java에서 Update() 매소드를 이용하여 지속적으로 변화를 수행시켜줍니다.
+맵을 그리고 효과를 주었으니 GameState.java에서 Update() 매소드를 이용하여 지속적으로 변화를 수행합니다.
 ```java
 //GameState.java
  @Override  //지속적으로 수행할 것들
@@ -595,7 +595,7 @@ Enermy.java, Item.java, Player.java 각각에 추가하여 충돌 처리를 할 
         m_BoundBox.bottom = m_y+104;
     }
 ```
-그리고 장애물, 아이템, 플레이어는 정적으로 있는 것이 아니므로 이와 같이 동적으로 움직여도 충돌 박스가 같이 갈 수 있도록 구현을 해주었습니다.
+그리고 장애물, 아이템, 플레이어는 정적으로 있는 것이 아니므로 이와 같이 동적으로 움직여도 충돌 박스가 같이 갈 수 있도록 구현한다.
 
 ```java
     public void Update() {
@@ -609,7 +609,7 @@ Enermy.java, Item.java, Player.java 각각에 추가하여 충돌 처리를 할 
         CheckCollision();
     }
 ```
-for문을 이용해서 각 충돌 시, 사라지도록 구현하였습니다.   
+for문을 이용해서 각 충돌 시, 사라지도록 구현 
    
 ## 3. 메인 및 게임 실행 화면  
 ![ima](https://user-images.githubusercontent.com/60215726/75088558-581b6d00-5592-11ea-9433-52934e59f59e.PNG)
