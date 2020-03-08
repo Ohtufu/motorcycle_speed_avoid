@@ -23,10 +23,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
     
     @Override
     protected void onDraw(Canvas canvas) {
-//        super.onDraw(canvas);
+        //super.onDraw(canvas);
         //작동 여부 확인용 그림
         Bitmap _scratch = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
-//        canvas.drawColor(Color.RED);//배경
+        //canvas.drawColor(Color.RED); //배경
         //canvas.drawBitmap(_scratch,10,10,null);
         m_state.Render(canvas);
     }
@@ -36,7 +36,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
         setFocusable(true); // 키 입력을 지원하는 안드로이드 폰에서 주인공 캐릭터 이동 구현
 
         getHolder().addCallback(this);
-//내가 만들 객체가 surfaceHolder롤백을 수신하고자 한다는것을 surfaceholder에게 알림.
+        //내가 만들 객체가 surfaceHolder롤백을 수신하고자 한다는것을 surfaceholder에게 알림.
         m_thread = new GameViewThread(getHolder(),this);
         AppManager.getInstance().setGameView(this);
         AppManager.getInstance().setResources(getResources());
