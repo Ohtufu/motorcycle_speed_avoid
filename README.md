@@ -12,7 +12,7 @@
 
 ## 코드  
 #### 1) GameView.java
-프레임워크로서  게임 배경에 대한 그림을 비트맵으로 그리는 부분과 게임 플레이어의 조작, gameview의 surface에 대한 스레드를 관리
+프레임워크로서 게임 배경에 대한 그림을 비트맵으로 그리며 게임 플레이어의 조작, gameview의 surface에 대한 스레드를 관리하는 역할을 합니다.
 ```java
 //View를 연결하기 위한 surface생성,변경, 종료 이벤트 알려주는 인터페이스 surfaceholder: 실제 surface에 대한 작업자
 //surface를 관리하는 surfaceHolder를 구현해야함//컨트롤하는 객체
