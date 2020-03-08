@@ -154,7 +154,7 @@ public class GraphicObject {
 #### 4) GameViewThread.java
 Thread 클래스를 상속받는 클래스로써 GameView와 SurfaceHolder를 생성자 매개변수로 가지며, 스레드 실행을 위해 run 메소드를 재정의 합니다.
 ```java
-/그림을 관리하는 클래스를 생성하는것  그림처리는 스레드로 이용
+/그림을 관리하는 클래스를 생성, 그림처리는 스레드로 이용
 public class GameViewThread extends Thread {
     //접근을 위한 멤버 변수
     private SurfaceHolder m_surfaceHolder;
@@ -198,23 +198,27 @@ public class GameViewThread extends Thread {
 ```java
 public class SpriteAnimation extends GraphicObject{
 
-    private Rect m_Rect;//그릴 범위정보, 그려줄 사각영역
-    private int m_fps;//초당프레임
+    private Rect m_Rect;//그릴 범위정보, 사각 영역
+    private int m_fps;//초당 프레임
     private int m_iFrames;// 프레임 개수
 
-    //애니매이션이 얼마나 진행되엇는지를 알려주는 용도(현재 프레임을 담는 멤버 변수)
-    //이변수는 시간이 지남에 따라 값이 증가하고, 그에 따라 그려지는 이미지도 바뀌도록 구현, 나머지는 개별 프레임의 높이와 넓이를 담아줄 멤버 변수.
+    //애니매이션의 진행 정도를 알려주는 용도(현재 프레임을 담는 멤버 변수)
+    //이변수는 시간이 지남에 따라 값이 증가하고, 그에 따라 그려지는 이미지도 바뀌도록 구현
+    //나머지는 개별 프레임의 높이와 넓이를 담아줄 멤버 변수.  
+    
     private  int m_CurrentFrame;//최근 프레임
     private  int m_SpriteWidth;
     private  int m_SpriteHeight;
     private long m_FrameTimer;
     public SpriteAnimation(Bitmap bitmap){
-        super(bitmap);
+        super(bitmap);  
+        
         //멤버 변수 초기화
         m_Rect = new Rect(0,0,0,0);//x,y,w,h
         m_CurrentFrame = 0;
         m_FrameTimer = 0;
-    }
+    }  
+    
     //인스턴스에 스프라이트 애니메이션 정보를 대입하는 InitSpriteData메소드
     public void InitSpriteData(int _width, int _height, int _fps, int _iFrames){
         m_SpriteWidth = _width;
@@ -223,14 +227,15 @@ public class SpriteAnimation extends GraphicObject{
         m_Rect.bottom = m_SpriteHeight;
         m_Rect.left = 0;
         m_Rect.right = m_SpriteWidth;
-        m_fps = 1000/_fps;//밀리초 단위로 프레임 수행(1초)
+        m_fps = 1000/_fps;//밀리 초 단위로 프레임 수행(1초)
         m_iFrames = _iFrames;
     }
-    public void Update(long GameTime){//게임시간 프레임변환주기 위한 시간.
+    //게임시간 프레임변환주기 위한 시간.
+    public void Update(long GameTime){
         if(GameTime>m_FrameTimer+m_fps){
             m_FrameTimer = GameTime;
             m_CurrentFrame+=1;
-            if(m_CurrentFrame >= m_iFrames){m_CurrentFrame = 0;}// 최대 프레임 수 초과하면 다시 첫번째로
+            if(m_CurrentFrame >= m_iFrames){m_CurrentFrame = 0;} // 최대 프레임 수 초과하면 다시 첫번째로
         }
         m_Rect.left = m_CurrentFrame*m_SpriteWidth;
         m_Rect.right = m_Rect.left +m_Rect.right;
@@ -244,7 +249,7 @@ public class SpriteAnimation extends GraphicObject{
 ```
 #### 6)AppManager.java
 프레임 워크를 관리하는 매니저 클래스로서 프레임워크를 사용하는 애플리케이션을 관리합니다.
-또한 게임뷰와 리소스 접근을 위해서만 사용, 추후에 상용 수준의 게임을 만든다면 여기 클래스에 애플리케이션 실행정보나 여러 가지 정보를 관리하는 기능을 추가할 수 있습니다.
+또한 게임 뷰와 리소스 접근을 위해서만 사용, 추후에 상용 수준의 게임을 만든다면 여기 클래스에 애플리케이션 실행 정보나 관리하는 기능을 추가할 수 있습니다.
 ```java
 public class AppManager {
     private static AppManager s_instance;
@@ -279,12 +284,12 @@ public class AppManager {
 ```
    
 #### 7) 게임진행
- 여기서는 만들어진 장애물, 아이템, 플레이어의 움직임, 점수에 따른 맵 배경 변경 및 난이도 상승등을 컨트롤 할 수 있습니다.   
+ 만들어진 장애물, 아이템, 플레이어의 움직임, 점수에 따른 맵 배경 변경 및 난이도 상승등을 컨트롤 할 수 있습니다.   
  사용된 클래스로는 GameState, CollsionManager, Enemy, Item, Player 입니다.
 #####  (1) 장애물의 패턴과 난이도 조절   
 * 장애물의 패턴   
 프로젝트 내에서 장애물을 나타내는 코드는 패턴을 나타내는 Enemy와 세 가지의 장애물 그림을 나타내는 Enemy_1,Enemy_2,Enemy_3으로 구성되어있습니다. 
-패턴에서는 등장하는 3가지 경로 중에 어느 곳으로 나오는 지 정해주는 m_x과 내려오는 속도를 정해주는 m_y로 존재하며 패턴은 이 두 가지로 섞어 패턴을 완성해주었습니다.
+패턴에서는 등장하는 3가지 경로 중에 어느 곳으로 나오는 지 정해주는 m_x과 내려오는 속도를 정해주는 m_y로 존재하며 패턴은 이 두 가지로 섞어 완성해주었습니다.
 ```java
 //Enemy.java
  void Move(){
@@ -302,7 +307,7 @@ public class AppManager {
 
             if(m_y<=200){
                 m_x = 380;
-                m_y += speed; //중간지점까지 기본속도로
+                m_y += speed; //중간지점까지 기본 속도로
             }
             else {
                 m_y += speed*5;
@@ -312,7 +317,7 @@ public class AppManager {
            //세번째
             if(m_y<=200){
                 m_x = 700;
-                m_y += speed; //중간지점까지 기본속도로
+                m_y += speed; //중간지점까지 기본 속도로
             }
             else {
                 m_y += speed*5;
@@ -321,20 +326,20 @@ public class AppManager {
         else if(movetype == MOVE_PATTERN_4){
  
             m_x = 700;
-            m_y += speed*5 ; //중간지점까지 기본속도로
+            m_y += speed*5 ; //중간지점까지 기본 속도로
         }
         else if(movetype == MOVE_PATTERN_5){
   
             m_x = 50;
-            m_y += speed*2; //중간지점까지 기본속도로
+            m_y += speed*2; //중간지점까지 기본 속도로
         }
 }
 ```
-패턴의 개수가 본 프로젝트에는 총 13가지로 정해놓았지만 깃허브에 저장되는 것이 너무 길어지는 것을 방지하기 위해 5패턴만 업로드하였습니다.
+본 프로젝트에는 패턴의 개수를 총 13가지로 정해놓았지만 가독성을 위해 5가지의 패턴만 업로드하였습니다.
    
 
 * 장애물의 난이도조절   
-GameState.java에서 장애물을 점수(시간)이나 플레이어의 생명점수에 따라 저장된 장애물의 패턴을 조절을 해주는 역할을 합니다. 즉 난이도 조절을 해줍니다.
+GameState.java에서 점수, 시간, 플레이어의 생명 점수에 따라 저장된 장애물의 패턴을 조절을 해주는 역할을 합니다. 즉, 난이도 조절을 해줍니다.
 ```java
 //GameState.java 의 장애물을 만드는 코드
     Random ranEnem = new Random();
@@ -465,10 +470,10 @@ GameState.java에서 장애물을 점수(시간)이나 플레이어의 생명점
                 enem.SetPosition(0, -60);
                 if (m_player.getLife() > 5) {
                     enem.movetype = ranEnem.nextInt(3);
-                    //여기서는 장애물의 종류가 3가지이므로 3가지 중 랜덤으로 장애물이 나오도록 설정하는 곳입니다.
+                    //장애물 종류는 3개, 랜덤으로 나오도록 설정하는 곳입니다.
                 } else {
                     enem.movetype = ranEnem.nextInt(13);
-                    //여기서는 장애물의 패턴의 종류가 13가지 중 랜덤으로 패턴을 정하는 곳입니다.
+                    //장애물 패턴의 종류 13개, 랜덤으로 정하는 곳입니다.
                 }
                 m_enemlist.add(enem);
             }
@@ -476,16 +481,17 @@ GameState.java에서 장애물을 점수(시간)이나 플레이어의 생명점
     }
 ```   
 ##### (2) 아이템    
-아이템에서는 두 가지로 설정하였습니다. 아이템이라고 하면 먹을 시에 라이프의 개수가 하나 증가하는 역할을 합니다.
+아이템에서는 두 가지로 설정, 먹을 시에(충돌) 라이프의 개수가 하나 증가합니다.  
 아이템은 장애물의 코드와 같습니다. 
    
 
 ##### (3) 맵   
-맵은 정적인 이미지를 사용하여 스크롤이라는 효과를 줌으로서 동적인 것처럼 제작하였습니다. 
+맵은 정적인 이미지를 사용하여 스크롤 효과를 줌으로서 동적인 것처럼 제작하였습니다.  
 맵은 총 두 가지로 제작하였으며 테블릿으로 디자인을 그렸습니다. 
-![map](https://user-images.githubusercontent.com/60215726/75035190-4a160f80-54f2-11ea-8451-c132204ec40a.PNG)
+![map](https://user-images.githubusercontent.com/60215726/75035190-4a160f80-54f2-11ea-8451-c132204ec40a.PNG)  
+
  * BackGround.java   
-여기서는 스크롤의 효과와 스피드를 지정해주었습니다.
+스크롤의 효과와 스피드를 지정
 ```java
 public class BackGround extends  GraphicObject{
     static final float SCROLL_SPEED = 30f;
