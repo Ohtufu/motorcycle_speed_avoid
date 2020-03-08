@@ -47,7 +47,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback{
     public void Update(){
         //프레임 워크에서 사용자의 입력이나 안드로이드 내외부의 신호를 받지 않더라도 데이터를 자동으로 갱신
         //updata 메소드를 스레드에서 지속적으로 실행해야만 갱신이 수행되므로  
-        //gameviewthread의 run메서드에서 update 메소드를 실행하도록
+        //gameviewthread의 run 메소드에서 update 메소드를 실행하도록
         m_state.Update();
     }
     @Override
@@ -152,7 +152,7 @@ public class GraphicObject {
 ```
    
 #### 4) GameViewThread.java
-Thread 클래스를 상속받는 클래스로써 GameView와 SurfaceHolder를 생성자 매개변수로 가지며, 스레드 실행을 위해 run 메서드를 재정의 합니다.
+Thread 클래스를 상속받는 클래스로써 GameView와 SurfaceHolder를 생성자 매개변수로 가지며, 스레드 실행을 위해 run 메소드를 재정의 합니다.
 ```java
 /그림을 관리하는 클래스를 생성하는것  그림처리는 스레드로 이용
 public class GameViewThread extends Thread {
