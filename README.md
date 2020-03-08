@@ -230,7 +230,7 @@ public class SpriteAnimation extends GraphicObject{
         m_fps = 1000/_fps;//밀리 초 단위로 프레임 수행(1초)
         m_iFrames = _iFrames;
     }
-    //게임시간 프레임변환주기 위한 시간.
+    //게임시간 프레임 변환을 주기 위한 시간.
     public void Update(long GameTime){
         if(GameTime>m_FrameTimer+m_fps){
             m_FrameTimer = GameTime;
